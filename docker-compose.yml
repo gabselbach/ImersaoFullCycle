@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  backend:
+    build: .
+    entrypoint: dockerize -wait tcp://db:3306 -timeout 40s ./docker/entrypoint.sh
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - '.:/home/node/app'
+    expose:
+      - 3000
+    depends_on: 
+      - db
+  db:
+    image: mysql:5.7
+    build: ./docker/mysql
+    restart: always
+    command:  --character-set-server=utf8mb4 --innodb-print-all-deadlocks=ON
+    tty: true
+    environment:
+      - DB_HOST=db
+      - MYSQL_ROOT_PASSWORD=Ld8W6nkVbfBxbjB1
+      - MYSQL_DATABASE=fin
+      - NODE_ENV=development
+      
+    ports:
+      - "33080:3306"
+    volumes:
+      - './docker/dbdata:/var/lib/mysql'
+    expose:
+      - 33080
+    security_opt:
+      - seccomp:unconfined
+    cap_add:
+      - SYS_NICE

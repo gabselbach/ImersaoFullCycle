@@ -1,0 +1,12 @@
+[{
+    "type": "mysql",
+    "host": "localhost",
+    "port": 33080,
+    "username": "root",
+    "password": "Ld8W6nkVbfBxbjB1",
+    "database": "project_basic",
+    "entities": ["dist/**/*.entity{.ts,.js}"],
+    "seeds": ["src/**/seeds/*{.ts,.js}"],
+    "factories": ["src/**/factories/*{.ts,.js}"],
+    "synchronize": true
+  }]

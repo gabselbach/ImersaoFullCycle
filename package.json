@@ -1,0 +1,81 @@
+{
+  "name": "fin-cycle",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "^8.0.6",
+    "@nestjs/config": "^1.0.1",
+    "@nestjs/core": "^8.0.6",
+    "@nestjs/mapped-types": "*",
+    "@nestjs/platform-express": "^8.0.6",
+    "@nestjs/sequelize": "^8.0.0",
+    "@nestjs/typeorm": "^8.0.2",
+    "mysql2": "^2.3.0",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "rxjs": "^7.3.0",
+    "sequelize": "^6.5.0",
+    "sequelize-typescript": "^2.1.0",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2",
+    "typeorm": "^0.2.37"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^8.0.6",
+    "@nestjs/schematics": "^7.1.3",
+    "@nestjs/testing": "^8.0.6",
+    "@types/express": "^4.17.8",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.6",
+    "@types/sequelize": "^4.28.10",
+    "@types/supertest": "^2.0.10",
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "7.2.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.6.3",
+    "prettier": "^2.1.2",
+    "supertest": "^6.0.0",
+    "ts-jest": "^26.4.3",
+    "ts-loader": "^8.0.8",
+    "ts-node": "^9.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.0.5"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
